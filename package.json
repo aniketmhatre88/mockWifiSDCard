@@ -1,0 +1,23 @@
+{
+  "name": "mockWifiSDCard",
+  "version": "1.0.0",
+  "description": "A mock server for a standard Wifi enabled SD Card for prototyping apps",
+  "main": "src/app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/aniketmhatre88/mockWifiSDCard.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/aniketmhatre88/mockWifiSDCard/issues"
+  },
+  "homepage": "https://github.com/aniketmhatre88/mockWifiSDCard",
+  "dependencies": {
+    "express": "^4.13.1",
+    "shelljs": "^0.5.1"
+  }
+}
