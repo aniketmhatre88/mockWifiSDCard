@@ -3,13 +3,12 @@
  */
 
 var express = require('shelljs/global');
-
-var BASE_PATH =  '/Users/aniketm/mockWifiSDCard';
+var common = require('./common.js');
 
 function getFileList(dir){
     var result = [];
 
-    var rawOp = exec('ls -l ' + BASE_PATH + dir, {silent:true}).output;
+    var rawOp = exec('ls -l ' + common.getBasePath() + dir, {silent:true}).output;
 
     var list =rawOp.split('-rw-r-----@ 1 ').slice(1);
 
@@ -33,7 +32,7 @@ module.exports = {
      * op 101 returns count of files in SD card
      */
     '101': function(dir) {
-        return ls(BASE_PATH + dir).length;
+        return ls(common.getBasePath() + dir).length;
     },
 
     /**
@@ -46,6 +45,6 @@ module.exports = {
            return fileInfo.directory+','+fileInfo.filename+','+fileInfo.size+','+fileInfo.attribute+','+fileInfo.date+','+fileInfo.time;
         });
 
-        return list.join('\n');
+        return 'WLANSD_FILELIST\n'+list.join('\n');
     }
 };
