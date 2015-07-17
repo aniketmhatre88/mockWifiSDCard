@@ -13,9 +13,13 @@ function getFileList(dir){
     var list =rawOp.split('-rw-r-----@ 1 ').slice(1);
 
     list.forEach(function(fileInfo) {
+        console.log(fileInfo);
         var infoArr = fileInfo.split(' ');
         result.push({
             directory: dir,
+            //of nw
+            /*filename: infoArr[9].replace('\n', ''),
+            size: infoArr[5],*/
             filename: infoArr[8].replace('\n', ''),
             size: infoArr[4],
             attribute: '32',
